@@ -19,6 +19,7 @@ class Card(object):
     BRAND_MAESTRO = 'maestro'
     BRAND_DINERS = 'diners'
     BRAND_UNKNOWN = u'unknown'
+    BRAND_JCB = 'jcb'
     BRANDS = {
         BRAND_VISA: re.compile(r'^4\d{12}(\d{3})?$'),
         BRAND_MASTERCARD: re.compile(r'''
@@ -32,6 +33,7 @@ class Card(object):
             re.compile(r'^(?:5[0678]\d\d|6304|6390|67\d\d)\d{8,15}$'),
         BRAND_DINERS:
             re.compile(r'^3(?:0[0-5]|[68][0-9])[0-9]{11}$'),
+        BRAND_JCB: re.compile(r'^(3(?:088|096|112|158|337|5(?:2[89]|[3-8][0-9]))\d{12})$')
     }
     FRIENDLY_BRANDS = {
         BRAND_VISA: 'Visa',
@@ -41,6 +43,7 @@ class Card(object):
         BRAND_DANKORT: 'Dankort',
         BRAND_MAESTRO: 'Maestro',
         BRAND_DINERS: 'Diners Club',
+        BRAND_JCB: 'JCB'
     }
 
     # Common test credit cards
